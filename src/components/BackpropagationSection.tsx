@@ -77,7 +77,7 @@ export const BackpropagationSection: React.FC<BackpropagationSectionProps> = ({
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, type: 'spring', stiffness: 90 }}
-            className="lg:col-span-7 glass-panel rounded-3xl p-6 border-[var(--border)] bg-[var(--card)] text-[var(--card-foreground)] space-y-6"
+            className="lg:col-span-7 glass-panel rounded-3xl p-4 sm:p-6 border-[var(--border)] bg-[var(--card)] text-[var(--card-foreground)] space-y-6"
           >
             <div className="flex items-center space-x-2 text-xs font-mono text-[var(--primary)] font-semibold uppercase tracking-wider">
               <ArrowLeft size={18} weight="bold" />
@@ -113,7 +113,7 @@ export const BackpropagationSection: React.FC<BackpropagationSectionProps> = ({
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, type: 'spring', stiffness: 90 }}
-            className="lg:col-span-5 glass-panel rounded-3xl p-6 border-[var(--border)] bg-[var(--card)] text-[var(--card-foreground)] space-y-6"
+            className="lg:col-span-5 glass-panel rounded-3xl p-4 sm:p-6 border-[var(--border)] bg-[var(--card)] text-[var(--card-foreground)] space-y-6"
           >
             <div className="flex items-center space-x-2 text-xs font-mono text-[var(--primary)] font-semibold uppercase tracking-wider">
               <GitCommit size={18} weight="bold" />

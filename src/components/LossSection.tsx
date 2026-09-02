@@ -57,7 +57,7 @@ export const LossSection: React.FC<LossSectionProps> = ({ reducedMotion }) => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, type: 'spring', stiffness: 90 }}
-            className="lg:col-span-6 glass-panel rounded-3xl p-6 border-[var(--border)] bg-[var(--card)] text-[var(--card-foreground)] space-y-6"
+            className="lg:col-span-6 glass-panel rounded-3xl p-4 sm:p-6 border-[var(--border)] bg-[var(--card)] text-[var(--card-foreground)] space-y-6"
           >
             <div className="flex items-center space-x-2 text-xs font-mono text-[var(--primary)] font-semibold uppercase tracking-wider">
               <Target size={18} weight="bold" />
@@ -94,7 +94,7 @@ export const LossSection: React.FC<LossSectionProps> = ({ reducedMotion }) => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, type: 'spring', stiffness: 90 }}
-            className="lg:col-span-6 glass-panel rounded-3xl p-6 border-[var(--border)] bg-[var(--card)] text-[var(--card-foreground)] space-y-4"
+            className="lg:col-span-6 glass-panel rounded-3xl p-4 sm:p-6 border-[var(--border)] bg-[var(--card)] text-[var(--card-foreground)] space-y-4"
           >
             <div className="flex items-center justify-between text-xs font-mono text-[var(--primary)] font-semibold">
               <span className="flex items-center space-x-1.5">

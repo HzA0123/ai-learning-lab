@@ -162,17 +162,17 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
 
   return (
     <header className="sticky top-0 z-50 w-full glass-panel border-b border-[var(--border)] backdrop-blur-xl bg-[var(--card)]/95 text-[var(--foreground)]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2">
         {/* Brand Logo */}
-        <div className="flex items-center space-x-2 sm:space-x-3">
+        <div className="flex items-center space-x-2 shrink-0">
           <div className="w-8 h-8 rounded-lg bg-[var(--primary)]/15 border border-[var(--primary)]/40 flex items-center justify-center text-[var(--primary)] shrink-0">
             <Cpu size={18} weight="bold" />
           </div>
           <div className="flex items-center gap-1.5">
-            <span className="font-semibold text-xs sm:text-sm tracking-wide uppercase font-sans whitespace-nowrap">
+            <span className="font-bold text-xs sm:text-sm tracking-wide uppercase font-sans whitespace-nowrap">
               AI Learning Lab
             </span>
-            <span className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 rounded bg-[var(--muted)] text-[var(--muted-foreground)] font-mono border border-[var(--border)]">
+            <span className="hidden sm:inline-block text-[10px] px-2 py-0.5 rounded bg-[var(--muted)] text-[var(--muted-foreground)] font-mono border border-[var(--border)]">
               Topic 01
             </span>
           </div>
@@ -279,22 +279,22 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
         </div>
 
         {/* Right Action Controls */}
-        <div className="flex items-center space-x-2 sm:space-x-3">
+        <div className="flex items-center space-x-1.5 sm:space-x-2 shrink-0">
           {/* Light / Dark Mode Toggle Button */}
           <button
             onClick={onToggleTheme}
-            className="flex items-center space-x-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-mono border border-[var(--border)] bg-[var(--card)] text-[var(--foreground)] hover:border-[var(--primary)] transition-all shadow-xs"
+            className="flex items-center justify-center p-2 sm:px-3 sm:py-1.5 rounded-lg text-xs font-mono border border-[var(--border)] bg-[var(--card)] text-[var(--foreground)] hover:border-[var(--primary)] transition-all shadow-xs"
             title={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} mode`}
           >
             {theme === 'dark' ? (
               <>
                 <Sun size={16} weight="bold" className="text-amber-400" />
-                <span className="hidden sm:inline">Light</span>
+                <span className="hidden sm:inline-block sm:ml-1.5">Light</span>
               </>
             ) : (
               <>
                 <Moon size={16} weight="bold" className="text-[var(--primary)]" />
-                <span className="hidden sm:inline">Dark</span>
+                <span className="hidden sm:inline-block sm:ml-1.5">Dark</span>
               </>
             )}
           </button>
@@ -302,7 +302,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
           {/* Motion Toggle Button */}
           <button
             onClick={onToggleReducedMotion}
-            className={`flex items-center space-x-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-mono border transition-all ${
+            className={`flex items-center justify-center p-2 sm:px-3 sm:py-1.5 rounded-lg text-xs font-mono border transition-all ${
               reducedMotion
                 ? 'bg-amber-500/10 border-amber-500/30 text-amber-500 font-semibold'
                 : 'bg-[var(--card)] border-[var(--border)] text-[var(--muted-foreground)] hover:text-[var(--foreground)]'
@@ -310,7 +310,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
             title="Toggle reduced motion for animations"
           >
             {reducedMotion ? <EyeSlash size={16} weight="bold" /> : <Eye size={16} weight="bold" />}
-            <span className="hidden sm:inline">
+            <span className="hidden sm:inline-block sm:ml-1.5">
               {reducedMotion ? 'Reduced' : 'Motion'}
             </span>
           </button>
@@ -326,25 +326,28 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
         </div>
       </div>
 
-      {/* Mobile Navigation Drawer */}
+      {/* Mobile Navigation Drawer Overlay */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-[var(--border)] bg-[var(--card)] p-4 max-h-[80vh] overflow-y-auto space-y-4 shadow-xl">
+        <div className="fixed inset-x-0 top-16 lg:hidden border-b border-[var(--border)] bg-[var(--card)]/98 backdrop-blur-2xl p-4 max-h-[calc(100vh-4rem)] overflow-y-auto space-y-4 shadow-2xl z-50">
           <div>
-            <div className="text-[10px] font-mono uppercase tracking-widest text-[var(--primary)] font-bold mb-2">
-              Interactive Learning Topics
+            <div className="flex items-center justify-between pb-2 mb-3 border-b border-[var(--border)] font-mono text-[10px] uppercase tracking-widest text-[var(--primary)] font-bold">
+              <span>Interactive Topics</span>
+              <span className="px-2 py-0.5 rounded bg-[var(--muted)] border border-[var(--border)] text-[var(--muted-foreground)]">
+                Topic 01: Neural Networks
+              </span>
             </div>
-            <div className="grid grid-cols-1 gap-1.5">
+            <div className="grid grid-cols-1 gap-2">
               {TOPIC_ITEMS.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="flex items-center justify-between p-2.5 rounded-xl border border-[var(--border)] bg-[var(--background)]/60 text-left text-xs font-sans hover:border-[var(--primary)] transition-all"
+                  className="flex items-center justify-between p-3 rounded-xl border border-[var(--border)] bg-[var(--background)]/80 text-left text-xs font-sans hover:border-[var(--primary)] active:scale-[0.99] transition-all"
                 >
-                  <div className="flex items-center gap-2">
-                    <item.icon size={16} weight="bold" className="text-[var(--primary)] shrink-0" />
-                    <span className="font-semibold text-[var(--foreground)]">{item.title}</span>
+                  <div className="flex items-center gap-2.5 min-w-0">
+                    <item.icon size={18} weight="bold" className="text-[var(--primary)] shrink-0" />
+                    <span className="font-semibold text-[var(--foreground)] truncate">{item.title}</span>
                   </div>
-                  <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-[var(--muted)] border border-[var(--border)] text-[var(--muted-foreground)] shrink-0">
+                  <span className="text-[9px] font-mono px-2 py-0.5 rounded bg-[var(--muted)] border border-[var(--border)] text-[var(--muted-foreground)] shrink-0 ml-2">
                     {item.badge}
                   </span>
                 </button>
@@ -355,9 +358,9 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
           <div className="pt-2 border-t border-[var(--border)]">
             <button
               onClick={() => scrollToSection('references')}
-              className="w-full text-left py-2 px-3 rounded-xl bg-[var(--muted)] text-[var(--foreground)] font-mono text-xs font-semibold flex items-center justify-between"
+              className="w-full text-left py-3 px-3.5 rounded-xl bg-[var(--muted)] text-[var(--foreground)] font-mono text-xs font-semibold flex items-center justify-between hover:border-[var(--primary)] border border-transparent transition-all"
             >
-              <span>Academic Research Papers</span>
+              <span>Scientific Research Papers</span>
               <BookOpen size={16} weight="bold" className="text-[var(--primary)]" />
             </button>
           </div>

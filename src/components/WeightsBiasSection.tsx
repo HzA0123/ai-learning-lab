@@ -66,7 +66,7 @@ export const WeightsBiasSection: React.FC<WeightsBiasSectionProps> = ({ reducedM
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, type: 'spring', stiffness: 90 }}
-            className="lg:col-span-6 glass-panel rounded-3xl p-6 border-[var(--border)] bg-[var(--card)] text-[var(--card-foreground)] space-y-6"
+            className="lg:col-span-6 glass-panel rounded-3xl p-4 sm:p-6 border-[var(--border)] bg-[var(--card)] text-[var(--card-foreground)] space-y-6"
           >
             <div className="flex items-center space-x-2 text-xs font-mono text-[var(--primary)] font-semibold uppercase tracking-wider">
               <SlidersHorizontal size={18} weight="bold" />
@@ -118,7 +118,7 @@ export const WeightsBiasSection: React.FC<WeightsBiasSectionProps> = ({ reducedM
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, type: 'spring', stiffness: 90 }}
-            className="lg:col-span-6 glass-panel rounded-3xl p-6 border-[var(--border)] bg-[var(--card)] text-[var(--card-foreground)]"
+            className="lg:col-span-6 glass-panel rounded-3xl p-4 sm:p-6 border-[var(--border)] bg-[var(--card)] text-[var(--card-foreground)]"
           >
             <div className="flex items-center space-x-2 text-xs font-mono text-[var(--primary)] font-semibold mb-6 uppercase tracking-wider">
               <GitBranch size={18} weight="bold" />

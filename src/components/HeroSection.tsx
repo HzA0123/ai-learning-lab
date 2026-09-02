@@ -60,7 +60,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ reducedMotion }) => {
           <div className="lg:col-span-6">
             <WarpBackground gridColor="rgba(183, 124, 65, 0.1)" perspective={120} beamDuration={4}>
               <Card className="w-full bg-[var(--card)] border-[var(--border)] shadow-2xl overflow-hidden text-[var(--card-foreground)]">
-                <CardContent className="p-6 sm:p-8">
+                <CardContent className="p-3.5 sm:p-6 lg:p-8">
                   
                   {/* Top Bar Label */}
                   <div className="text-xs font-mono text-[var(--muted-foreground)] font-medium uppercase tracking-widest mb-4 flex items-center justify-between">
@@ -74,8 +74,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ reducedMotion }) => {
                   </div>
 
                   {/* SVG Neural Diagram with Theme Variables */}
-                  <div className="relative w-full aspect-[540/230] bg-[var(--background)]/80 rounded-2xl border border-[var(--border)] p-2 overflow-hidden">
-                    <svg viewBox="0 0 540 230" className="w-full h-full overflow-visible">
+                  <div className="relative w-full min-h-[200px] sm:min-h-0 sm:aspect-[540/230] bg-[var(--background)]/80 rounded-2xl border border-[var(--border)] p-2 overflow-x-auto">
+                    <svg viewBox="0 0 540 230" className="w-full h-full min-w-[440px] sm:min-w-0">
                       <defs>
                         <linearGradient id="wireGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
                           <stop offset="0%" stopColor="var(--primary)" stopOpacity="0.8" />
