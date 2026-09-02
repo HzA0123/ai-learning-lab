@@ -37,22 +37,22 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ reducedMotion }) => {
               <span className="font-medium tracking-wide">Interactive Learning Lab</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--foreground)] mb-6 leading-[1.08] font-sans">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--foreground)] mb-6 leading-[1.1] font-sans break-words">
               How Does a <span className="text-[var(--primary)]">Neural Network</span> Learn?
             </h1>
 
-            <p className="text-base sm:text-lg text-[var(--muted-foreground)] font-normal leading-relaxed mb-8 max-w-[55ch]">
+            <p className="text-sm sm:text-lg text-[var(--muted-foreground)] font-normal leading-relaxed mb-8 max-w-[55ch]">
               Explore the exact mathematical intuition behind forward passes, loss functions, gradient descent, and backpropagation through real-time interactive simulations.
             </p>
 
-            <div className="inline-flex flex-wrap items-center gap-2 p-2 rounded-2xl glass-panel border-[var(--border)] text-xs font-mono text-[var(--foreground)] mb-8">
-              <span className="px-3 py-1.5 rounded-xl bg-[var(--primary)]/15 text-[var(--primary)] font-medium border border-[var(--primary)]/30">01 Read</span>
-              <span className="text-[var(--muted-foreground)]">→</span>
-              <span className="px-3 py-1.5 rounded-xl bg-[var(--muted)] text-[var(--foreground)] font-medium border border-[var(--border)]">02 Observe</span>
-              <span className="text-[var(--muted-foreground)]">→</span>
-              <span className="px-3 py-1.5 rounded-xl bg-[var(--muted)] text-[var(--foreground)] font-medium border border-[var(--border)]">03 Interact</span>
-              <span className="text-[var(--muted-foreground)]">→</span>
-              <span className="px-3 py-1.5 rounded-xl bg-[var(--muted)] text-[var(--foreground)] font-medium border border-[var(--border)]">04 Master</span>
+            <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-2 p-2 rounded-2xl glass-panel border-[var(--border)] text-[11px] sm:text-xs font-mono text-[var(--foreground)] mb-8">
+              <span className="px-2.5 py-1.5 rounded-xl bg-[var(--primary)]/15 text-[var(--primary)] font-medium border border-[var(--primary)]/30 text-center">01 Read</span>
+              <span className="hidden sm:inline text-[var(--muted-foreground)]">→</span>
+              <span className="px-2.5 py-1.5 rounded-xl bg-[var(--muted)] text-[var(--foreground)] font-medium border border-[var(--border)] text-center">02 Observe</span>
+              <span className="hidden sm:inline text-[var(--muted-foreground)]">→</span>
+              <span className="px-2.5 py-1.5 rounded-xl bg-[var(--muted)] text-[var(--foreground)] font-medium border border-[var(--border)] text-center">03 Interact</span>
+              <span className="hidden sm:inline text-[var(--muted-foreground)]">→</span>
+              <span className="px-2.5 py-1.5 rounded-xl bg-[var(--muted)] text-[var(--foreground)] font-medium border border-[var(--border)] text-center">04 Master</span>
             </div>
           </div>
 

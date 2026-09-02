@@ -119,19 +119,19 @@ export const NeuronSection: React.FC<NeuronSectionProps> = ({ reducedMotion }) =
             </div>
 
             {/* Visual Diagram */}
-            <div className="bg-[var(--background)] rounded-2xl p-6 mb-6 border border-[var(--border)] relative overflow-hidden">
-              <div className="flex items-center justify-between">
+            <div className="bg-[var(--background)] rounded-2xl p-4 sm:p-6 mb-6 border border-[var(--border)] relative overflow-hidden">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-4">
                 {/* Inputs Stack */}
-                <div className="space-y-3 font-mono text-xs z-10">
+                <div className="flex sm:flex-col items-center sm:items-start justify-center gap-3 font-mono text-xs z-10 w-full sm:w-auto overflow-x-auto py-1">
                   {inputs.map((val, i) => (
                     <motion.div
                       key={i}
                       animate={reducedMotion ? false : { scale: [1, 1.03, 1] }}
                       transition={{ duration: 2, repeat: Infinity, delay: i * 0.4 }}
-                      className="flex items-center space-x-2"
+                      className="flex items-center space-x-1.5 sm:space-x-2 shrink-0"
                     >
-                      <span className="w-6 text-[var(--muted-foreground)]">x{i + 1}</span>
-                      <div className="px-2.5 py-1 rounded bg-[var(--card)] border border-[var(--border)] text-[var(--foreground)] font-semibold">
+                      <span className="w-5 sm:w-6 text-[var(--muted-foreground)]">x{i + 1}</span>
+                      <div className="px-2 sm:px-2.5 py-1 rounded bg-[var(--card)] border border-[var(--border)] text-[var(--foreground)] font-semibold text-xs">
                         {val.toFixed(2)}
                       </div>
                     </motion.div>
@@ -142,7 +142,7 @@ export const NeuronSection: React.FC<NeuronSectionProps> = ({ reducedMotion }) =
                 <motion.div
                   animate={reducedMotion ? false : { scale: [1, 1.02, 1] }}
                   transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                  className="w-24 h-24 rounded-2xl bg-[var(--card)] border-2 border-[var(--primary)] flex flex-col items-center justify-center p-2 z-10 shadow-lg shadow-[var(--primary)]/10"
+                  className="w-28 sm:w-24 h-24 rounded-2xl bg-[var(--card)] border-2 border-[var(--primary)] flex flex-col items-center justify-center p-2 z-10 shadow-lg shadow-[var(--primary)]/10 shrink-0"
                 >
                   <span className="text-[10px] font-mono text-[var(--primary)] uppercase font-semibold">Weighted Sum</span>
                   <span className="font-mono text-sm font-bold text-[var(--foreground)] mt-0.5">
@@ -152,7 +152,7 @@ export const NeuronSection: React.FC<NeuronSectionProps> = ({ reducedMotion }) =
                 </motion.div>
 
                 {/* Output Node */}
-                <div className="font-mono text-xs z-10 text-right">
+                <div className="font-mono text-xs z-10 text-center sm:text-right shrink-0">
                   <span className="block text-[var(--muted-foreground)] font-medium mb-1">Output y</span>
                   <motion.div
                     key={output}
@@ -167,15 +167,15 @@ export const NeuronSection: React.FC<NeuronSectionProps> = ({ reducedMotion }) =
             </div>
 
             {/* Formula Breakdown */}
-            <div className="bg-[var(--muted)]/50 rounded-2xl p-4 border border-[var(--border)] font-mono text-xs space-y-2">
+            <div className="bg-[var(--muted)]/50 rounded-2xl p-4 border border-[var(--border)] font-mono text-xs space-y-2 overflow-x-auto">
               <div className="text-[var(--muted-foreground)] uppercase text-[10px] tracking-wider mb-1">Mathematical Representation</div>
-              <div className="text-[var(--primary)] font-semibold">
+              <div className="text-[var(--primary)] font-semibold whitespace-nowrap">
                 z = (x₁·w₁) + (x₂·w₂) + (x₃·w₃) + b
               </div>
-              <div className="text-[var(--foreground)]">
+              <div className="text-[var(--foreground)] whitespace-nowrap">
                 z = ({inputs[0].toFixed(2)} × 0.8) + ({inputs[1].toFixed(2)} × -0.5) + ({inputs[2].toFixed(2)} × 0.4) + 0.20
               </div>
-              <div className="text-[var(--primary)] font-bold pt-1 border-t border-[var(--border)]">
+              <div className="text-[var(--primary)] font-bold pt-1 border-t border-[var(--border)] whitespace-nowrap">
                 z = {weightedSum.toFixed(2)}  ➔  y = max(0, {weightedSum.toFixed(2)}) = {output.toFixed(2)}
               </div>
             </div>

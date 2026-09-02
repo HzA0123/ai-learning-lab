@@ -86,21 +86,21 @@ export const BackpropagationSection: React.FC<BackpropagationSectionProps> = ({
 
             <div className="space-y-4 font-mono text-xs">
               {/* Step A */}
-              <div className="bg-[var(--background)] p-4 rounded-2xl border border-[var(--border)] space-y-1">
-                <div className="text-[var(--primary)] font-bold">Stage 1: Loss Derivative wrt Output (∂L/∂ŷ)</div>
-                <div className="text-[var(--foreground)]">∂L/∂ŷ = ŷ - y = {prediction.toFixed(2)} - {target.toFixed(1)} = {grads.dL_dpred.toFixed(4)}</div>
+              <div className="bg-[var(--background)] p-4 rounded-2xl border border-[var(--border)] space-y-1 overflow-x-auto">
+                <div className="text-[var(--primary)] font-bold text-[11px] sm:text-xs">Stage 1: Loss Derivative wrt Output (∂L/∂ŷ)</div>
+                <div className="text-[var(--foreground)] whitespace-nowrap">∂L/∂ŷ = ŷ - y = {prediction.toFixed(2)} - {target.toFixed(1)} = {grads.dL_dpred.toFixed(4)}</div>
               </div>
 
               {/* Step B */}
-              <div className="bg-[var(--background)] p-4 rounded-2xl border border-[var(--border)] space-y-1">
-                <div className="text-[var(--primary)] font-bold">Stage 2: Activation Derivative wrt Sum (∂ŷ/∂z)</div>
-                <div className="text-[var(--foreground)]">d/dz ReLU({z.toFixed(2)}) = {grads.dpred_dz.toFixed(1)}</div>
+              <div className="bg-[var(--background)] p-4 rounded-2xl border border-[var(--border)] space-y-1 overflow-x-auto">
+                <div className="text-[var(--primary)] font-bold text-[11px] sm:text-xs">Stage 2: Activation Derivative wrt Sum (∂ŷ/∂z)</div>
+                <div className="text-[var(--foreground)] whitespace-nowrap">d/dz ReLU({z.toFixed(2)}) = {grads.dpred_dz.toFixed(1)}</div>
               </div>
 
               {/* Step C */}
-              <div className="bg-[var(--background)] p-4 rounded-2xl border border-[var(--border)] space-y-1">
-                <div className="text-[var(--primary)] font-bold">Stage 3: Final Weight Gradient (∂L/∂w₁)</div>
-                <div className="text-[var(--primary)] font-bold">
+              <div className="bg-[var(--background)] p-4 rounded-2xl border border-[var(--border)] space-y-1 overflow-x-auto">
+                <div className="text-[var(--primary)] font-bold text-[11px] sm:text-xs">Stage 3: Final Weight Gradient (∂L/∂w₁)</div>
+                <div className="text-[var(--primary)] font-bold whitespace-nowrap">
                   ∂L/∂w₁ = (∂L/∂ŷ) · (∂ŷ/∂z) · (∂z/∂w₁) = {grads.dL_dpred.toFixed(2)} × {grads.dpred_dz.toFixed(1)} × {inputs[0].toFixed(1)} = {grads.dL_dw[0].toFixed(4)}
                 </div>
               </div>

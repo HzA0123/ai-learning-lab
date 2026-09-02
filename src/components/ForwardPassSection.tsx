@@ -121,14 +121,14 @@ export const ForwardPassSection: React.FC<ForwardPassSectionProps> = ({ reducedM
           transition={{ duration: 0.5 }}
           className="glass-panel rounded-3xl p-6 border-[var(--border)] bg-[var(--card)] text-[var(--card-foreground)] mb-8"
         >
-          <div className="flex flex-wrap items-center justify-between gap-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             {/* Control Buttons */}
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-2.5 sm:space-x-3">
               <motion.button
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={() => handleManualStep()}
-                className="flex items-center space-x-2 px-4 py-2 rounded-xl bg-[var(--primary)] hover:opacity-90 text-[var(--primary-foreground)] text-xs font-mono font-semibold transition-all shadow-md"
+                className="flex-1 sm:flex-none flex items-center justify-center space-x-2 px-4 py-2 rounded-xl bg-[var(--primary)] hover:opacity-90 text-[var(--primary-foreground)] text-xs font-mono font-semibold transition-all shadow-md"
               >
                 <SkipForward size={16} weight="bold" />
                 <span>Next Step</span>
@@ -138,7 +138,7 @@ export const ForwardPassSection: React.FC<ForwardPassSectionProps> = ({ reducedM
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={handleReset}
-                className="flex items-center space-x-2 px-3.5 py-2 rounded-xl bg-[var(--muted)] hover:bg-[var(--accent)] border border-[var(--border)] text-[var(--foreground)] text-xs font-mono transition-colors"
+                className="flex-1 sm:flex-none flex items-center justify-center space-x-2 px-3.5 py-2 rounded-xl bg-[var(--muted)] hover:bg-[var(--accent)] border border-[var(--border)] text-[var(--foreground)] text-xs font-mono transition-colors"
               >
                 <ArrowCounterClockwise size={16} weight="bold" />
                 <span>Reset</span>
@@ -146,26 +146,26 @@ export const ForwardPassSection: React.FC<ForwardPassSectionProps> = ({ reducedM
             </div>
 
             {/* Status & Step Indicators */}
-            <div className="flex items-center space-x-4">
-              {/* Subtle Autoplay Status Badge */}
-              <div className="hidden sm:flex items-center space-x-2 text-[11px] font-mono text-[var(--muted-foreground)]">
+            <div className="flex items-center justify-between sm:justify-end space-x-3 sm:space-x-4">
+              {/* Autoplay Status Badge */}
+              <div className="flex items-center space-x-1.5 text-[10px] sm:text-[11px] font-mono text-[var(--muted-foreground)]">
                 {isPlaying ? (
-                  <span className="flex items-center space-x-1.5 text-[var(--primary)]">
+                  <span className="flex items-center space-x-1 text-[var(--primary)]">
                     <CircleNotch size={12} weight="bold" className="animate-spin" />
-                    <span>Autoplay active</span>
+                    <span>Autoplay</span>
                   </span>
                 ) : (
-                  <span className="text-[var(--muted-foreground)]">Paused (Resumes in 10s)</span>
+                  <span className="text-[var(--muted-foreground)]">Paused (10s)</span>
                 )}
               </div>
 
               {/* Step Numbers */}
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-1.5 sm:space-x-2">
                 {STEPS.map((s) => (
                   <button
                     key={s.step}
                     onClick={() => handleManualStep(s.step)}
-                    className={`w-8 h-8 rounded-lg font-mono text-xs flex items-center justify-center border transition-all ${
+                    className={`w-7 h-7 sm:w-8 sm:h-8 rounded-lg font-mono text-xs flex items-center justify-center border transition-all ${
                       currentStep === s.step
                         ? 'bg-[var(--primary)] border-[var(--primary)] text-[var(--primary-foreground)] font-bold shadow-md'
                         : currentStep > s.step

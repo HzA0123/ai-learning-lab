@@ -83,14 +83,14 @@ export const ActivationSection: React.FC<ActivationSectionProps> = ({ reducedMot
         </motion.div>
 
         {/* Function Selector Tabs */}
-        <div className="flex space-x-2 mb-8">
+        <div className="grid grid-cols-3 sm:flex sm:space-x-2 gap-2 mb-8">
           {(['relu', 'sigmoid', 'tanh'] as ActivationType[]).map((func) => (
             <motion.button
               key={func}
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
               onClick={() => setActiveFunc(func)}
-              className={`px-5 py-2 rounded-xl font-mono text-xs font-semibold uppercase tracking-wider border transition-all ${
+              className={`w-full py-2.5 px-3 sm:px-5 rounded-xl font-mono text-xs font-semibold uppercase tracking-wider border transition-all text-center ${
                 activeFunc === func
                   ? 'bg-[var(--primary)] text-[var(--primary-foreground)] border-[var(--primary)] shadow-md font-bold'
                   : 'bg-[var(--card)] border-[var(--border)] text-[var(--muted-foreground)] hover:text-[var(--foreground)]'
