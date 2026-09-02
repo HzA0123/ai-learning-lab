@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #f9f7f1;
+  --foreground: #4e3f31;
+  --card: #fffcf5;
+  --card-foreground: #4e3f31;
+  --popover: #fffcf5;
+  --popover-foreground: #4e3f31;
+  --primary: #b77c41;
+  --primary-foreground: #ffffff;
+  --secondary: #e8dabd;
+  --secondary-foreground: #624d39;
+  --muted: #f0e6d4;
+  --muted-foreground: #856c4e;
+  --accent: #dccca2;
+  --accent-foreground: #4e3f31;
+  --destructive: #cf391b;
+  --destructive-foreground: #ffffff;
+  --border: #e2d2b3;
+  --input: #e2d2b3;
+  --ring: #b77c41;
+  --chart-1: #b77c41;
+  --chart-2: #9a6f3f;
+  --chart-3: #7e5b2f;
+  --chart-4: #c19061;
+  --chart-5: #cda073;
+  --sidebar: #f0e6d4;
+  --sidebar-foreground: #4e3f31;
+  --sidebar-primary: #b77c41;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #dccca2;
+  --sidebar-accent-foreground: #4e3f31;
+  --sidebar-border: #e2d2b3;
+  --sidebar-ring: #b77c41;
+  --font-sans: 'Manrope', ui-sans-serif, sans-serif, system-ui;
+  --font-serif: 'Bricolage Grotesque', ui-sans-serif, sans-serif, system-ui;
+  --font-mono: 'JetBrains Mono', monospace;
+  --radius: 0.25rem;
+  --shadow-color: #3c322a;
+  --shadow-opacity: 0.08;
+  --shadow-blur: 12px;
+  --shadow-spread: 0px;
+  --shadow-offset-x: 2px;
+  --shadow-offset-y: 3px;
+  --letter-spacing: 0em;
+  --spacing: 0.25rem;
+}
+
+.dark {
+  --background: #1c1c17;
+  --foreground: #f0e6d4;
+  --card: #0f0f0f;
+  --card-foreground: #f0e6d4;
+  --popover: #3d3229;
+  --popover-foreground: #f0e6d4;
+  --primary: #cda073;
+  --primary-foreground: #2f261f;
+  --secondary: #4d3f36;
+  --secondary-foreground: #f0e6d4;
+  --muted: #332b24;
+  --muted-foreground: #cabda7;
+  --accent: #5e4839;
+  --accent-foreground: #f0e6d4;
+  --destructive: #cf391b;
+  --destructive-foreground: #ffffff;
+  --border: #4d3f36;
+  --input: #4d3f36;
+  --ring: #cda073;
+  --chart-1: #cda073;
+  --chart-2: #c19061;
+  --chart-3: #b77c41;
+  --chart-4: #9a6f3f;
+  --chart-5: #7e5b2f;
+  --sidebar: #0f0f0f;
+  --sidebar-foreground: #f0e6d4;
+  --sidebar-primary: #cda073;
+  --sidebar-primary-foreground: #2f261f;
+  --sidebar-accent: #5e4839;
+  --sidebar-accent-foreground: #f0e6d4;
+  --sidebar-border: #4d3f36;
+  --sidebar-ring: #cda073;
+  --font-sans: 'Manrope', ui-sans-serif, sans-serif, system-ui;
+  --font-serif: 'Bricolage Grotesque', ui-sans-serif, sans-serif, system-ui;
+  --font-mono: 'JetBrains Mono', monospace;
+  --radius: 0.25rem;
+  --shadow-color: #3c322a;
+  --shadow-opacity: 0.3;
+  --shadow-blur: 16px;
+  --shadow-spread: 0px;
+  --shadow-offset-x: 2px;
+  --shadow-offset-y: 3px;
+  --letter-spacing: 0em;
+  --spacing: 0.25rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-font-sans: var(--font-sans);
+  --color-font-serif: var(--font-serif);
+  --color-font-mono: var(--font-mono);
+  --color-radius: var(--radius);
+  --color-shadow-color: var(--shadow-color);
+  --color-shadow-opacity: var(--shadow-opacity);
+  --color-shadow-blur: var(--shadow-blur);
+  --color-shadow-spread: var(--shadow-spread);
+  --color-shadow-offset-x: var(--shadow-offset-x);
+  --color-shadow-offset-y: var(--shadow-offset-y);
+  --color-letter-spacing: var(--letter-spacing);
+  --color-spacing: var(--spacing);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+/* Dynamic Glassmorphic Panel supporting Theme Variables */
+.glass-panel {
+  background: var(--card);
+  color: var(--card-foreground);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  box-shadow: 0 var(--shadow-offset-y) var(--shadow-blur) var(--shadow-spread) rgba(60, 50, 42, var(--shadow-opacity));
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.glass-panel-hover {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  border-color: var(--primary);
+  box-shadow: 0 8px 24px -4px rgba(60, 50, 42, calc(var(--shadow-opacity) + 0.1));
+  transform: translateY(-2px);
+}
+
+/* Custom Scrollbar for theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Dynamic Accent Glow */
+.accent-glow {
+  box-shadow: 0 0 20px -4px var(--primary);
+}
