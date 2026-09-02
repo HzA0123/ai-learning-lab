@@ -46,4 +46,6 @@ dist/
 .gemini/
 *_PRD.md
 *_prd.md
+!PRD_TEMPLATE.md
+
 
